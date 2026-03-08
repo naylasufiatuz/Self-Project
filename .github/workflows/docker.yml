@@ -26,5 +26,5 @@ jobs:
       - name: Push Image
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag dtp-image USERNAME/dtp-image
-          docker push USERNAME/dtp-image
+          docker tag dtp-image ${{ secrets.DOCKER_USERNAME }}/dtp-image
+          docker push ${{ secrets.DOCKER_USERNAME }}/dtp-image
